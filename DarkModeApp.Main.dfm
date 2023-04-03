@@ -189,11 +189,12 @@ object FormWindowsSystemMode: TFormWindowsSystemMode
   end
   object MainMenu1: TMainMenu
     Left = 456
-    Top = 40
+    Top = 8
     object File1: TMenuItem
       Caption = 'File'
       object Exit1: TMenuItem
         Caption = 'Exit'
+        OnClick = Exit1Click
       end
       object N11: TMenuItem
         Caption = '1'

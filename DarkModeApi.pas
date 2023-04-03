@@ -1,4 +1,7 @@
-UNIT DarkModeApi;
+unit DarkModeApi;
+
+{$WARN SYMBOL_PLATFORM OFF}
+{$HINTS OFF}
 
 interface
 
@@ -64,7 +67,9 @@ uses
   DarkModeApi.Consts, Vcl.StdCtrls, DarkModeApi.Menus,
   System.Win.Registry;
 
-{$R DarkModeApi.res DarkModeApi.rc}
+// Investigation into supporting Vcl.Themes and Vcl.Styles, but not necessary
+// Add DarkModeApi.rc to the project and uncomment below if required.
+// {$R DarkModeApi.res DarkModeApi.rc}
 
 var
   _AllowDarkModeForApp: TAllowDarkModeForApp = nil;
@@ -470,14 +475,6 @@ begin
     Result := False;
   end;
 end;
-
-//procedure AllowDarkModeForApp(allow: BOOL);
-//begin
-//  if Assigned(_AllowDarkModeForApp) then
-//    _AllowDarkModeForApp(allow) else
-//  if Assigned(_SetPreferredAppMode) then
-//    _SetPreferredAppMode(PreferredAppMode(IfThen(allow, Ord(AllowDarkMode), Ord(DefaultMode))));
-//end;
 
 var
   SaveInitProc: Pointer;

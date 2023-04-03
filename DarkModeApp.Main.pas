@@ -39,6 +39,7 @@ type
     RadioGroup1: TRadioGroup;
     CheckListBox1: TCheckListBox;
     procedure FormCreate(Sender: TObject);
+    procedure Exit1Click(Sender: TObject);
   protected
     FForceDarkMode: Boolean;
     procedure CreateWindowHandle(const Params: TCreateParams); override;
@@ -87,6 +88,11 @@ begin
 //      DarkModeApi.DwmSetWindowAttribute(Handle, DWMWA_WINDOW_CORNER_PREFERENCE, Pref,
 //        SizeOf(Pref));
 //    end;
+end;
+
+procedure TFormWindowsSystemMode.Exit1Click(Sender: TObject);
+begin
+  Close;
 end;
 
 procedure TFormWindowsSystemMode.FormCreate(Sender: TObject);

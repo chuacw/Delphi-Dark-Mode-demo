@@ -39,9 +39,10 @@ begin
     begin
       DeleteObject(vMenuInfo.hbrBack);
       vMenuInfo.hbrBack := Default(HBRUSH);
+    end else
+    begin
+      vMenuInfo.hbrBack := CreateSolidBrush(InputBackColor);
     end;
-  if vMenuInfo.hbrBack = Default(HBRUSH) then
-    vMenuInfo.hbrBack := CreateSolidBrush(InputBackColor);
 
   SetMenuInfo(AHandle, vMenuInfo);
 end;
@@ -67,14 +68,12 @@ begin
 end;
 
 function TMainMenu.GetHandle: HMENU;
-var
-  Pref: UInt32;
 begin
   Result := inherited;
 
 //  if IsWindows10OrGreater then
 //    begin
-//      Pref := Ord(DWMWCP_ROUND);
+//      var Pref: UInt32 := Ord(DWMWCP_ROUND);
 //      DwmSetWindowAttribute(Result, DWMWA_WINDOW_CORNER_PREFERENCE, Pref, SizeOf(Pref));
 //      FlushMenuThemes;
 //

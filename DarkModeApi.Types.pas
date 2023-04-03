@@ -1,5 +1,10 @@
 unit DarkModeApi.Types;
 
+{$ALIGN ON}
+{$MINENUMSIZE 4}
+{$WEAKPACKAGEUNIT}
+{$WARN SYMBOL_PLATFORM OFF}
+
 interface
 
 uses

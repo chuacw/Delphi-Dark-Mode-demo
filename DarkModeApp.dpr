@@ -1,6 +1,6 @@
 program DarkModeApp;
 
-{$R 'DarkModeApi.res' 'DarkModeApi.rc'}
+
 
 uses
   Vcl.Forms,
