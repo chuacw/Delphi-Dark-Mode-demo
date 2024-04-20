@@ -7,7 +7,8 @@ uses
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
   Winapi.UxTheme, Vcl.StdCtrls, Vcl.ComCtrls, DarkModeApi.Types,
   DarkModeApi.ComCtrls, Vcl.WinXCtrls, Vcl.NumberBox, Vcl.WinXCalendars,
-  Vcl.CheckLst, Vcl.ExtCtrls;
+  Vcl.CheckLst, Vcl.ExtCtrls, DarkModeApi.CheckLst, DarkModeApi.WinXCalendars,
+  DarkModeApi.Menus;
 
 type
 

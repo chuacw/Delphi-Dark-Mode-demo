@@ -98,7 +98,7 @@ begin
     begin
       AllowDarkModeForApp(True);
       Value := True;
-      DwmSetWindowAttribute(Handle, DWMWA_USE_IMMERSIVE_DARK_MODE, Value,
+      DwmSetWindowAttribute(Handle, ImmersiveDarkMode, Value,
         SizeOf(Value));
 
       FillMenuBkg(Self, FMenuInfo);

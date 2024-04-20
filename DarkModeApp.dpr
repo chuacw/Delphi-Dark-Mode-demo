@@ -11,7 +11,10 @@ uses
   DarkModeApi.ComCtrls in 'DarkModeApi.ComCtrls.pas',
   DarkModeApi.Consts in 'DarkModeApi.Consts.pas',
   DarkModeApi.Types in 'DarkModeApi.Types.pas',
-  DarkModeApi.Messages in 'DarkModeApi.Messages.pas';
+  DarkModeApi.Messages in 'DarkModeApi.Messages.pas',
+  DarkModeApi.ExtCtrls in 'DarkModeApi.ExtCtrls.pas',
+  DarkModeApi.CheckLst in 'DarkModeApi.CheckLst.pas',
+  DarkModeApi.WinXCalendars in 'DarkModeApi.WinXCalendars.pas';
 
 {$R *.res}
 

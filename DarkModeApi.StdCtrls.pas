@@ -107,7 +107,8 @@ end;
 procedure TRadioButton.CreateWindowHandle(const Params: TCreateParams);
 begin
   inherited;
-  if ShouldAppsUseDarkMode and not IsStyleActive(Handle) then
+  if ShouldAppsUseDarkMode // and not IsStyleActive(Handle)
+    then
     begin
       SetWindowTheme(Handle, CDarkModeExplorer, nil);
     end;
@@ -118,7 +119,8 @@ end;
 procedure TScrollBar.CreateWindowHandle(const Params: TCreateParams);
 begin
   inherited;
-  if ShouldAppsUseDarkMode and IsStyleActive(Handle) then
+  if ShouldAppsUseDarkMode // and IsStyleActive(Handle)
+    then
     begin
       SetWindowTheme(Handle, CDarkModeExplorer, nil);
     end;

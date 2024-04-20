@@ -26,14 +26,24 @@ type
 
 const
 
-  WM_UAHDESTROYWINDOW    = DarkModeApi.Consts.WM_UAHDESTROYWINDOW;	// handled by DefWindowProc
+  WM_UAHDESTROYWINDOW    = DarkModeApi.Consts.WM_UAHDESTROYWINDOW;	  // handled by DefWindowProc
   WM_UAHDRAWMENU         = DarkModeApi.Consts.WM_UAHDRAWMENU;	        // lParam is UAHMENU
-  WM_UAHDRAWMENUITEM     = DarkModeApi.Consts.WM_UAHDRAWMENUITEM;	// lParam is UAHDRAWMENUITEM
+  WM_UAHDRAWMENUITEM     = DarkModeApi.Consts.WM_UAHDRAWMENUITEM;	    // lParam is UAHDRAWMENUITEM
   WM_UAHINITMENU         = DarkModeApi.Consts.WM_UAHINITMENU;	        // handled by DefWindowProc
   WM_UAHMEASUREMENUITEM  = DarkModeApi.Consts.WM_UAHMEASUREMENUITEM;	// lParam is UAHMEASUREMENUITEM
   WM_UAHNCPAINTMENUPOPUP = DarkModeApi.Consts.WM_UAHNCPAINTMENUPOPUP;	// handled by DefWindowProc
   WM_UAHUPDATE           = DarkModeApi.Consts.WM_UAHUPDATE;
 
+procedure SetRedraw(Wnd: THandle; Redraw: Boolean); inline;
+
 implementation
+
+uses
+  Winapi.Windows;
+
+procedure SetRedraw(Wnd: THandle; Redraw: Boolean);
+begin
+  SendMessage(Wnd, WM_SETREDRAW, Ord(Redraw), 0);
+end;
 
 end.

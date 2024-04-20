@@ -13,10 +13,11 @@ type
   end;
 
 // The background is overwritten by the OS
-//  TProgressBar = class(Vcl.ComCtrls.TProgressBar)
-//  protected
-//    procedure WMEraseBkGnd(var Message: TWmEraseBkgnd); Message WM_ERASEBKGND;
-//  end;
+  TProgressBar = class(Vcl.ComCtrls.TProgressBar)
+  protected
+    procedure CreateWindowHandle(const Params: TCreateParams); override;
+    procedure WMEraseBkGnd(var Message: TWmEraseBkgnd); Message WM_ERASEBKGND;
+  end;
 
 implementation
 
@@ -29,10 +30,11 @@ uses
 procedure TComboBoxEx.CreateWindowHandle(const Params: TCreateParams);
 begin
   inherited;
-  if ShouldAppsUseDarkMode and not TStyleManager.ActiveStyle.Enabled then
+  if ShouldAppsUseDarkMode // and not TStyleManager.ActiveStyle.Enabled
+    then
     begin
 //      Value := True;
-//      DwmSetWindowAttribute(Handle, DWMWA_USE_IMMERSIVE_DARK_MODE, Value,
+//      DwmSetWindowAttribute(Handle, ImmersiveDarkMode, Value,
 //        SizeOf(Value));
       SetWindowTheme(Handle, CDarkModeExplorer, nil);
     end;
@@ -40,14 +42,27 @@ end;
 
 { TProgressBar }
 
-//procedure TProgressBar.WMEraseBkGnd(var Message: TWmEraseBkgnd);
-//var
-//  LBrush: HBRUSH;
-//begin
-//  LBrush := CreateSolidBrush(RGB(0, 0, 0));
-//  FillRect(Message.DC, ClientRect, LBrush);
-//  DeleteObject(LBrush);
-//  Message.Result := 1;
-//end;
+procedure TProgressBar.WMEraseBkGnd(var Message: TWmEraseBkgnd);
+var
+  LBrush: HBRUSH;
+begin
+  LBrush := CreateSolidBrush(RGB(0, 0, 0));
+  FillRect(Message.DC, ClientRect, LBrush);
+  DeleteObject(LBrush);
+  Message.Result := 1;
+end;
+
+procedure TProgressBar.CreateWindowHandle(const Params: TCreateParams);
+begin
+  inherited;
+  if ShouldAppsUseDarkMode // and not TStyleManager.ActiveStyle.Enabled
+    then
+    begin
+//      Value := True;
+//      DwmSetWindowAttribute(Handle, ImmersiveDarkMode, Value,
+//        SizeOf(Value));
+      SetWindowTheme(Handle, CDarkModeExplorer, nil);
+    end;
+end;
 
 end.

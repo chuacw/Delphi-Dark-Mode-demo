@@ -89,9 +89,9 @@ var
   GUxTheme: HMODULE = 0;
 
 function DwmSetWindowAttribute(hwnd: HWND; dwAttribute: DWORD;
-  pvAttribute: Pointer; cbAttribute: DWORD): HResult; stdcall; overload; external Dwmapi name 'DwmSetWindowAttribute' delayed
+  pvAttribute: Pointer; cbAttribute: DWORD): HResult; stdcall; overload; external Dwmapi name 'DwmSetWindowAttribute' delayed;
 function DwmSetWindowAttribute(hwnd: HWND; dwAttribute: TDwmWindowAttribute;
-  var pvAttribute: DWM_WINDOW_CORNER_PREFERENCE; cbAttribute: DWORD): HResult; stdcall; overload; external Dwmapi name 'DwmSetWindowAttribute' delayed
+  var pvAttribute: DWM_WINDOW_CORNER_PREFERENCE; cbAttribute: DWORD): HResult; stdcall; overload; external Dwmapi name 'DwmSetWindowAttribute' delayed;
 
 procedure AllowDarkModeForApp(allow: BOOL);
 var
@@ -265,7 +265,7 @@ end;
 function IsColorSchemeChangeMessage(AlParam: LPARAM): Boolean; overload;
 begin
   Result := False;
-  if (AlParam <> 0) and (CompareStringOrdinal(PChar(AlParam), -1, 'ImmersiveColorSet', -1, True) = CSTR_EQUAL) then
+  if (AlParam <> 0) and (CompareStringOrdinal(PChar(AlParam), -1, 'ImmersiveColorSet', -1, Ord(True)) = CSTR_EQUAL) then
   begin
     _RefreshImmersiveColorPolicyState;
     Result := True;
@@ -492,14 +492,14 @@ begin
       GUxTheme := LoadLibraryEx('uxtheme.dll', 0, LOAD_LIBRARY_SEARCH_SYSTEM32);
       if GUxTheme <> 0 then
         begin
-          @_AllowDarkModeForWindow := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(133));
-          @_FlushMenuThemes := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(136));
+          @_AllowDarkModeForWindow               := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(133));
+          @_FlushMenuThemes                      := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(136));
           @_GetIsImmersiveColorUsingHighContrast := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(106));
-          @_IsDarkModeAllowedForWindow := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(137));
-          @_OpenNcThemeData := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(49));
-          @_RefreshImmersiveColorPolicyState := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(104));
-          @_SetWindowCompositionAttribute := GetProcAddress(GetModuleHandle('user32.dll'), 'SetWindowCompositionAttribute');
-          @_ShouldAppsUseDarkMode := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(132));
+          @_IsDarkModeAllowedForWindow           := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(137));
+          @_OpenNcThemeData                      := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(49));
+          @_RefreshImmersiveColorPolicyState     := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(104));
+          @_SetWindowCompositionAttribute        := GetProcAddress(GetModuleHandle('user32.dll'), 'SetWindowCompositionAttribute');
+          @_ShouldAppsUseDarkMode                := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(132));
 
           var P := GetProcAddress(GUxTheme, MAKEINTRESOURCEA(135));
           if TOSVersion.Build < 18362 then

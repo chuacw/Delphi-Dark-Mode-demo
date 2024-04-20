@@ -1,88 +1,127 @@
 object FormWindowsSystemMode: TFormWindowsSystemMode
   Left = 0
   Top = 0
+  Margins.Left = 7
+  Margins.Top = 7
+  Margins.Right = 7
+  Margins.Bottom = 7
   Caption = 'FormWindowsSystemMode'
-  ClientHeight = 679
-  ClientWidth = 663
+  ClientHeight = 1528
+  ClientWidth = 1519
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -12
+  Font.Height = -27
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = MainMenu1
   Position = poDesktopCenter
   OnCreate = FormCreate
-  TextHeight = 15
+  PixelsPerInch = 216
+  TextHeight = 37
   object Button1: TButton
-    Left = 360
-    Top = 8
-    Width = 75
-    Height = 25
+    Left = 810
+    Top = 18
+    Width = 169
+    Height = 56
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Caption = 'Button1'
     TabOrder = 0
   end
   object Edit1: TEdit
-    Left = 8
-    Top = 8
-    Width = 121
-    Height = 23
+    Left = 18
+    Top = 18
+    Width = 272
+    Height = 45
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     TabOrder = 1
     Text = 'Edit1'
   end
   object ComboBox1: TComboBox
-    Left = 8
-    Top = 56
-    Width = 145
-    Height = 23
+    Left = 18
+    Top = 126
+    Width = 326
+    Height = 45
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     TabOrder = 2
     Text = 'ComboBox1'
   end
   object ComboBoxEx1: TComboBoxEx
-    Left = 8
-    Top = 96
-    Width = 145
-    Height = 24
+    Left = 18
+    Top = 216
+    Width = 326
+    Height = 46
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     ItemsEx = <>
+    ItemHeight = 40
     TabOrder = 3
     Text = 'ComboBoxEx1'
   end
   object ScrollBar1: TScrollBar
-    Left = 780
-    Top = 8
-    Width = 22
-    Height = 377
+    Left = 1755
+    Top = 18
+    Width = 50
+    Height = 848
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Kind = sbVertical
     PageSize = 0
     TabOrder = 4
   end
   object Memo1: TMemo
-    Left = 8
-    Top = 145
-    Width = 233
-    Height = 136
+    Left = 18
+    Top = 326
+    Width = 524
+    Height = 306
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Lines.Strings = (
       'Memo1')
     TabOrder = 5
   end
   object TreeView1: TTreeView
-    Left = 257
-    Top = 39
-    Width = 169
-    Height = 137
-    Indent = 19
+    Left = 578
+    Top = 88
+    Width = 381
+    Height = 308
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
+    Indent = 43
     TabOrder = 6
     Items.NodeData = {
-      0303000000200000000000000000000000FFFFFFFFFFFFFFFF00000000000000
-      000000000001013100200000000000000000000000FFFFFFFFFFFFFFFF000000
-      00000000000000000001013200200000000000000000000000FFFFFFFFFFFFFF
-      FF00000000000000000000000001013300}
+      070300000009540054007200650065004E006F00640065002100000000000000
+      00000000FFFFFFFFFFFFFFFF0000000000000000000000000001013100000021
+      0000000000000000000000FFFFFFFFFFFFFFFF00000000000000000000000000
+      010132000000210000000000000000000000FFFFFFFFFFFFFFFF000000000000
+      0000000000000001013300}
   end
   object ListView1: TListView
-    Left = 8
-    Top = 288
-    Width = 233
-    Height = 150
+    Left = 18
+    Top = 648
+    Width = 524
+    Height = 338
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Columns = <>
     Items.ItemData = {
       05640000000300000000000000FFFFFFFFFFFFFFFF00000000FFFFFFFF000000
@@ -92,10 +131,14 @@ object FormWindowsSystemMode: TFormWindowsSystemMode
     TabOrder = 7
   end
   object ProgressBar1: TProgressBar
-    Left = 257
-    Top = 182
-    Width = 169
-    Height = 17
+    Left = 578
+    Top = 410
+    Width = 381
+    Height = 38
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Position = 50
     Smooth = True
     BarColor = clFuchsia
@@ -105,63 +148,91 @@ object FormWindowsSystemMode: TFormWindowsSystemMode
     StyleElements = []
   end
   object ToggleSwitch1: TToggleSwitch
-    Left = 168
-    Top = 8
-    Width = 73
-    Height = 20
+    Left = 378
+    Top = 18
+    Width = 155
+    Height = 45
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
+    SwitchHeight = 45
+    SwitchWidth = 113
     TabOrder = 9
+    ThumbWidth = 34
   end
   object ActivityIndicator1: TActivityIndicator
-    Left = 176
-    Top = 56
+    Left = 396
+    Top = 126
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Animate = True
     IndicatorType = aitSectorRing
   end
   object CalendarView1: TCalendarView
-    Left = 257
-    Top = 239
-    Width = 360
-    Height = 199
+    Left = 578
+    Top = 538
+    Width = 810
+    Height = 448
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Date = 45019.000000000000000000
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -20
+    Font.Height = -45
     Font.Name = 'Segoe UI'
     Font.Style = []
     HeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
     HeaderInfo.DaysOfWeekFont.Color = clWindowText
-    HeaderInfo.DaysOfWeekFont.Height = -13
+    HeaderInfo.DaysOfWeekFont.Height = -29
     HeaderInfo.DaysOfWeekFont.Name = 'Segoe UI'
     HeaderInfo.DaysOfWeekFont.Style = []
     HeaderInfo.Font.Charset = DEFAULT_CHARSET
     HeaderInfo.Font.Color = clWindowText
-    HeaderInfo.Font.Height = -20
+    HeaderInfo.Font.Height = -45
     HeaderInfo.Font.Name = 'Segoe UI'
     HeaderInfo.Font.Style = []
     ParentFont = False
     TabOrder = 11
   end
   object NumberBox1: TNumberBox
-    Left = 257
-    Top = 205
-    Width = 169
-    Height = 23
+    Left = 578
+    Top = 461
+    Width = 381
+    Height = 45
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     TabOrder = 12
     Value = 15.000000000000000000
+    SpinButtonOptions.ButtonWidth = 38
   end
   object CheckBox1: TCheckBox
-    Left = 257
-    Top = 8
-    Width = 97
-    Height = 17
+    Left = 578
+    Top = 18
+    Width = 219
+    Height = 38
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Caption = 'CheckBox1'
     TabOrder = 13
   end
   object RadioGroup1: TRadioGroup
-    Left = 432
-    Top = 39
-    Width = 185
-    Height = 105
+    Left = 972
+    Top = 88
+    Width = 416
+    Height = 236
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Caption = 'RadioGroup1'
     Columns = 2
     Items.Strings = (
@@ -173,12 +244,16 @@ object FormWindowsSystemMode: TFormWindowsSystemMode
     TabOrder = 14
   end
   object CheckListBox1: TCheckListBox
-    Left = 432
-    Top = 152
-    Width = 185
-    Height = 81
+    Left = 972
+    Top = 342
+    Width = 416
+    Height = 182
+    Margins.Left = 7
+    Margins.Top = 7
+    Margins.Right = 7
+    Margins.Bottom = 7
     Columns = 2
-    ItemHeight = 15
+    ItemHeight = 38
     Items.Strings = (
       '1'
       '2'
